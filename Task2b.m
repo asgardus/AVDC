@@ -3,7 +3,7 @@ clear all
 k_t=0;
 k_b=0.6;
 d=1;
-for k_t=0.7355:0.0001:0.736
+for k_t=0.73:0.01:0.75
     for mu_select = 2;              % set friction to mu_select = 1 (dry road), 2 (wet 
                             % road) or 3 (snow) for road and 1 for rail
     initial;
