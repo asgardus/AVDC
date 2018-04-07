@@ -9,13 +9,9 @@ for k_t=0.7355:0.0001:0.736
     initial;
     simOut = sim('slip_model_Student.mdl');
     figure(2);
-    subplot(2,1,1)
     plot(wheel_x);
     hold on
     plot(veh_x);
-    hold on
-    subplot(2,1,2);
-    plot(sr)
     hold on
     figure(5);
     plot(wheel_x);
