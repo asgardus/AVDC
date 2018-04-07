@@ -14,8 +14,8 @@ global Veh
 %% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %  Choose input parameters
 Vehicle = 'Road'            % set Road or Rail for the vehicle parameters
-
-Task = 2;
+mu_select = 2;
+Task = 3;
 dt = 0.001;
 %% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Vehicle parameters
@@ -114,7 +114,8 @@ Ki_em = 1;
 Ki_brake = 1;
 Kd_em = 1;
 Kd_brake = 1;
-
+k_t = 0.7356;
+k_b = 0.7356;
 
 
 
