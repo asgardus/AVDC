@@ -7,15 +7,14 @@
 % %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 clc
-clear all
-close all
+% clear all
+% close all
 
 global Veh
 %% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %  Choose input parameters
 Vehicle = 'Road'            % set Road or Rail for the vehicle parameters
-mu_select = 1;              % set friction to mu_select = 1 (dry road), 2 (wet 
-                            % road) or 3 (snow) for road and 1 for rail
+
 Task = 2;
 dt = 0.001;
 %% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -120,6 +119,7 @@ Kd_brake = 1;
 
 
 %% tire model - force-slip-curves
+h=figure(1);
 slip0 = -1:0.01:2;
 mu_plot = diag(Veh.mu)*sin(atan(slip0'*Veh.Bx)*diag(Veh.Cx))';
 % Fz_max = [mu';-mu'].*(m+mt)*9.81;grid on, 

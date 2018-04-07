@@ -1,0 +1,9 @@
+10% higher wheel slip
+k_t = 0.73574
+wheel_t = 31.7436
+acc_t = 3.76
+
+min
+k_t = 0.7356
+wheel_t = 28.6
+acc_t = 3.74
