@@ -7,7 +7,7 @@ Model {
     NumRootInports	    0
     NumRootOutports	    0
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.54"
+    ComputedModelVersion    "1.55"
     NumModelReferences	    0
     NumTestPointedSignals   2
     TestPointedSignal {
@@ -69,21 +69,21 @@ Model {
 	Dimension		3
 	Object {
 	  $ObjectID		  5
+	  IsActive		  [0]
+	  ViewObjType		  "SimulinkSubsys"
+	  LoadSaveID		  "67"
+	  Extents		  [1307.0, 660.0]
+	  ZoomFactor		  [2.0256410256410255]
+	  Offset		  [-90.113924050632932, 18.08860759493669]
+	}
+	Object {
+	  $ObjectID		  6
 	  IsActive		  [1]
 	  ViewObjType		  "SimulinkSubsys"
 	  LoadSaveID		  "188"
 	  Extents		  [1307.0, 660.0]
 	  ZoomFactor		  [0.95421057539867571]
-	  Offset		  [72.45318608287721, -36.335613760750618]
-	}
-	Object {
-	  $ObjectID		  6
-	  IsActive		  [0]
-	  ViewObjType		  "SimulinkSubsys"
-	  LoadSaveID		  "273"
-	  Extents		  [1307.0, 660.0]
-	  ZoomFactor		  [3.0094786729857819]
-	  Offset		  [-0.709744094488201, 38.999999999999986]
+	  Offset		  [72.45318608287721, 16.164386239249382]
 	}
 	Object {
 	  $ObjectID		  7
@@ -92,7 +92,7 @@ Model {
 	  LoadSaveID		  "242"
 	  Extents		  [1307.0, 660.0]
 	  ZoomFactor		  [1.0637280382576151]
-	  Offset		  [9.4637412040656272, -71.72967161845196]
+	  Offset		  [9.4637412040656272, -71.729671618452016]
 	}
 	PropName		"EditorsInfo"
       }
@@ -107,9 +107,9 @@ Model {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "gandh"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Sat Apr 07 13:05:22 2018"
-  RTWModifiedTimeStamp	  445007095
-  ModelVersionFormat	  "1.%<AutoIncrement:54>"
+  LastModifiedDate	  "Sun Apr 08 15:10:16 2018"
+  RTWModifiedTimeStamp	  445101005
+  ModelVersionFormat	  "1.%<AutoIncrement:55>"
   ConfigurationManager	  "none"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -2380,7 +2380,7 @@ Model {
     ShowPageBoundaries	    off
     ZoomFactor		    "139"
     ReportName		    "simulink-default.rpt"
-    SIDHighWatermark	    "520"
+    SIDHighWatermark	    "562"
     Block {
       BlockType		      SubSystem
       Name		      "Actuator"
@@ -2756,7 +2756,7 @@ Model {
 	  BlockType		  Inport
 	  Name			  "Sensor signals"
 	  SID			  "354"
-	  Position		  [105, 343, 135, 357]
+	  Position		  [105, 353, 135, 367]
 	  ZOrder		  -3
 	  Port			  "3"
 	  IconDisplay		  "Port number"
@@ -2765,7 +2765,7 @@ Model {
 	  BlockType		  SubSystem
 	  Name			  "ABS (PID)"
 	  SID			  "457"
-	  Ports			  []
+	  Ports			  [2, 1]
 	  Position		  [885, 319, 985, 361]
 	  ZOrder		  -4
 	  LibraryVersion	  "1.225"
@@ -2773,7 +2773,7 @@ Model {
 	  Variant		  off
 	  System {
 	    Name		    "ABS (PID)"
-	    Location		    [172, 52, 1944, 1191]
+	    Location		    [123, 178, 1673, 1016]
 	    Open		    off
 	    ModelBrowserVisibility  on
 	    ModelBrowserWidth	    200
@@ -2786,17 +2786,289 @@ Model {
 	    TiledPageScale	    1
 	    ShowPageBoundaries	    off
 	    ZoomFactor		    "100"
+	    Block {
+	      BlockType		      Inport
+	      Name		      "ax"
+	      SID		      "524"
+	      Position		      [155, 103, 185, 117]
+	      ZOrder		      2
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Inport
+	      Name		      "slip"
+	      SID		      "526"
+	      Position		      [155, 198, 185, 212]
+	      ZOrder		      3
+	      Port		      "2"
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Constant
+	      Name		      "Constant"
+	      SID		      "550"
+	      Position		      [155, 140, 185, 170]
+	      ZOrder		      14
+	    }
+	    Block {
+	      BlockType		      Constant
+	      Name		      "Constant1"
+	      SID		      "552"
+	      Position		      [155, 40, 185, 70]
+	      ZOrder		      16
+	      Value		      "0"
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "PID Controller"
+	      SID		      "539"
+	      Ports		      [1, 1]
+	      Position		      [390, 197, 430, 233]
+	      ZOrder		      10
+	      LibraryVersion	      "1.386"
+	      SourceBlock	      "simulink/Continuous/PID Controller"
+	      SourceType	      "PID 1dof"
+	      ContentPreviewEnabled   off
+	      Controller	      "PID"
+	      TimeDomain	      "Continuous-time"
+	      SampleTime	      "-1"
+	      IntegratorMethod	      "Forward Euler"
+	      FilterMethod	      "Forward Euler"
+	      Form		      "Parallel"
+	      UseFilter		      on
+	      ControllerParametersSource "internal"
+	      P			      "1"
+	      I			      "0"
+	      D			      "0"
+	      N			      "100"
+	      InitialConditionSource  "internal"
+	      InitialConditionForIntegrator "0"
+	      InitialConditionForFilter	"0"
+	      ExternalReset	      "none"
+	      IgnoreLimit	      off
+	      ZeroCross		      on
+	      LimitOutput	      off
+	      UpperSaturationLimit    "inf"
+	      LowerSaturationLimit    "-inf"
+	      LinearizeAsGain	      on
+	      AntiWindupMode	      "none"
+	      Kb		      "1"
+	      TrackingMode	      off
+	      Kt		      "1"
+	      RndMeth		      "Floor"
+	      SaturateOnIntegerOverflow	off
+	      LockScale		      off
+	      PParamMin		      "[]"
+	      PParamMax		      "[]"
+	      PParamDataTypeStr	      "Inherit: Inherit via internal rule"
+	      IParamMin		      "[]"
+	      IParamMax		      "[]"
+	      IParamDataTypeStr	      "Inherit: Inherit via internal rule"
+	      DParamMin		      "[]"
+	      DParamMax		      "[]"
+	      DParamDataTypeStr	      "Inherit: Inherit via internal rule"
+	      NParamMin		      "[]"
+	      NParamMax		      "[]"
+	      NParamDataTypeStr	      "Inherit: Inherit via internal rule"
+	      KbParamMin	      "[]"
+	      KbParamMax	      "[]"
+	      KbParamDataTypeStr      "Inherit: Inherit via internal rule"
+	      KtParamMin	      "[]"
+	      KtParamMax	      "[]"
+	      KtParamDataTypeStr      "Inherit: Inherit via internal rule"
+	      POutMin		      "[]"
+	      POutMax		      "[]"
+	      POutDataTypeStr	      "Inherit: Inherit via internal rule"
+	      PGainOutDataTypeStr     "Inherit: Inherit via internal rule"
+	      PProdOutDataTypeStr     "Inherit: Inherit via internal rule"
+	      IOutMin		      "[]"
+	      IOutMax		      "[]"
+	      IOutDataTypeStr	      "Inherit: Inherit via internal rule"
+	      IGainOutDataTypeStr     "Inherit: Inherit via internal rule"
+	      IProdOutDataTypeStr     "Inherit: Inherit via internal rule"
+	      DOutMin		      "[]"
+	      DOutMax		      "[]"
+	      DOutDataTypeStr	      "Inherit: Inherit via internal rule"
+	      DGainOutDataTypeStr     "Inherit: Inherit via internal rule"
+	      DProdOutDataTypeStr     "Inherit: Inherit via internal rule"
+	      NOutMin		      "[]"
+	      NOutMax		      "[]"
+	      NOutDataTypeStr	      "Inherit: Inherit via internal rule"
+	      NGainOutDataTypeStr     "Inherit: Inherit via internal rule"
+	      NProdOutDataTypeStr     "Inherit: Inherit via internal rule"
+	      KbOutMin		      "[]"
+	      KbOutMax		      "[]"
+	      KbOutDataTypeStr	      "Inherit: Inherit via internal rule"
+	      KtOutMin		      "[]"
+	      KtOutMax		      "[]"
+	      KtOutDataTypeStr	      "Inherit: Inherit via internal rule"
+	      IntegratorOutMin	      "[]"
+	      IntegratorOutMax	      "[]"
+	      IntegratorOutDataTypeStr "Inherit: Inherit via internal rule"
+	      FilterOutMin	      "[]"
+	      FilterOutMax	      "[]"
+	      FilterOutDataTypeStr    "Inherit: Inherit via internal rule"
+	      SumOutMin		      "[]"
+	      SumOutMax		      "[]"
+	      SumOutDataTypeStr	      "Inherit: Inherit via internal rule"
+	      SumI1OutMin	      "[]"
+	      SumI1OutMax	      "[]"
+	      SumI1OutDataTypeStr     "Inherit: Inherit via internal rule"
+	      SumI2OutMin	      "[]"
+	      SumI2OutMax	      "[]"
+	      SumI2OutDataTypeStr     "Inherit: Inherit via internal rule"
+	      SumI3OutMin	      "[]"
+	      SumI3OutMax	      "[]"
+	      SumI3OutDataTypeStr     "Inherit: Inherit via internal rule"
+	      SumDOutMin	      "[]"
+	      SumDOutMax	      "[]"
+	      SumDOutDataTypeStr      "Inherit: Inherit via internal rule"
+	      SumAccumDataTypeStr     "Inherit: Inherit via internal rule"
+	      SumI1AccumDataTypeStr   "Inherit: Inherit via internal rule"
+	      SumI2AccumDataTypeStr   "Inherit: Inherit via internal rule"
+	      SumI3AccumDataTypeStr   "Inherit: Inherit via internal rule"
+	      SumDAccumDataTypeStr    "Inherit: Inherit via internal rule"
+	      SaturationOutMin	      "[]"
+	      SaturationOutMax	      "[]"
+	      SaturationOutDataTypeStr "Inherit: Same as input"
+	      IntegratorContinuousStateAttributes "''"
+	      IntegratorStateMustResolveToSignalObject off
+	      IntegratorRTWStateStorageClass "Auto"
+	      FilterContinuousStateAttributes "''"
+	      FilterStateMustResolveToSignalObject off
+	      FilterRTWStateStorageClass "Auto"
+	      DifferentiatorICPrevScaledInput "0"
+	      DifferentiatorOutMin    "[]"
+	      DifferentiatorOutMax    "[]"
+	      DifferentiatorOutDataTypeStr "Inherit: Inherit via internal rule"
+	    }
+	    Block {
+	      BlockType		      Product
+	      Name		      "Product"
+	      SID		      "551"
+	      Ports		      [2, 1]
+	      Position		      [510, 102, 540, 133]
+	      ZOrder		      15
+	      InputSameDT	      off
+	      OutDataTypeStr	      "Inherit: Inherit via internal rule"
+	      RndMeth		      "Floor"
+	      SaturateOnIntegerOverflow	off
+	    }
+	    Block {
+	      BlockType		      Constant
+	      Name		      "Reference slip_b"
+	      SID		      "536"
+	      Position		      [155, 270, 185, 300]
+	      ZOrder		      7
+	      Value		      "0.12"
+	    }
+	    Block {
+	      BlockType		      Sum
+	      Name		      "Subtract"
+	      SID		      "537"
+	      Ports		      [2, 1]
+	      Position		      [295, 197, 325, 228]
+	      ZOrder		      8
+	      Inputs		      "+-"
+	      InputSameDT	      off
+	      OutDataTypeStr	      "Inherit: Inherit via internal rule"
+	      SaturateOnIntegerOverflow	off
+	    }
+	    Block {
+	      BlockType		      Switch
+	      Name		      "Switch"
+	      SID		      "549"
+	      Position		      [325, 90, 375, 130]
+	      ZOrder		      13
+	      InputSameDT	      off
+	      SaturateOnIntegerOverflow	off
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "T_ABS"
+	      SID		      "530"
+	      Position		      [695, 113, 725, 127]
+	      ZOrder		      5
+	      IconDisplay	      "Port number"
+	    }
+	    Line {
+	      ZOrder		      2
+	      SrcBlock		      "slip"
+	      SrcPort		      1
+	      DstBlock		      "Subtract"
+	      DstPort		      1
+	    }
+	    Line {
+	      ZOrder		      3
+	      SrcBlock		      "Reference slip_b"
+	      SrcPort		      1
+	      Points		      [52, 0; 0, -65]
+	      DstBlock		      "Subtract"
+	      DstPort		      2
+	    }
+	    Line {
+	      ZOrder		      7
+	      SrcBlock		      "Subtract"
+	      SrcPort		      1
+	      DstBlock		      "PID Controller"
+	      DstPort		      1
+	    }
+	    Line {
+	      ZOrder		      10
+	      SrcBlock		      "ax"
+	      SrcPort		      1
+	      DstBlock		      "Switch"
+	      DstPort		      2
+	    }
+	    Line {
+	      ZOrder		      12
+	      SrcBlock		      "Switch"
+	      SrcPort		      1
+	      DstBlock		      "Product"
+	      DstPort		      1
+	    }
+	    Line {
+	      ZOrder		      14
+	      SrcBlock		      "PID Controller"
+	      SrcPort		      1
+	      Points		      [35, 0; 0, -90]
+	      DstBlock		      "Product"
+	      DstPort		      2
+	    }
+	    Line {
+	      ZOrder		      15
+	      SrcBlock		      "Product"
+	      SrcPort		      1
+	      DstBlock		      "T_ABS"
+	      DstPort		      1
+	    }
+	    Line {
+	      ZOrder		      16
+	      SrcBlock		      "Constant1"
+	      SrcPort		      1
+	      Points		      [67, 0; 0, 40]
+	      DstBlock		      "Switch"
+	      DstPort		      1
+	    }
+	    Line {
+	      ZOrder		      17
+	      SrcBlock		      "Constant"
+	      SrcPort		      1
+	      Points		      [65, 0; 0, -30]
+	      DstBlock		      "Switch"
+	      DstPort		      3
+	    }
 	  }
 	}
 	Block {
 	  BlockType		  BusSelector
 	  Name			  "Bus\nSelector"
 	  SID			  "498"
-	  Ports			  [1, 2]
-	  Position		  [175, 331, 180, 369]
+	  Ports			  [1, 3]
+	  Position		  [170, 318, 180, 402]
 	  ZOrder		  1
 	  ShowName		  off
-	  OutputSignals		  "vx,omega"
+	  OutputSignals		  "vx,omega,ax"
 	  Port {
 	    PortNumber		    1
 	    Name		    "<vx>"
@@ -2809,20 +3081,26 @@ Model {
 	    RTWStorageClass	    "Auto"
 	    DataLoggingNameMode	    "SignalName"
 	  }
+	  Port {
+	    PortNumber		    3
+	    Name		    "<ax>"
+	    RTWStorageClass	    "Auto"
+	    DataLoggingNameMode	    "SignalName"
+	  }
 	}
 	Block {
 	  BlockType		  SubSystem
 	  Name			  "Feedforward"
 	  SID			  "360"
 	  Ports			  [2, 2]
-	  Position		  [550, 86, 650, 199]
+	  Position		  [700, 86, 800, 199]
 	  ZOrder		  -5
 	  LibraryVersion	  "1.225"
 	  RequestExecContextInheritance	off
 	  Variant		  off
 	  System {
 	    Name		    "Feedforward"
-	    Location		    [-7, -7, 1543, 831]
+	    Location		    [123, 178, 1673, 1016]
 	    Open		    off
 	    ModelBrowserVisibility  on
 	    ModelBrowserWidth	    200
@@ -2834,7 +3112,7 @@ Model {
 	    TiledPaperMargins	    [1.270000, 1.270000, 1.270000, 1.270000]
 	    TiledPageScale	    1
 	    ShowPageBoundaries	    off
-	    ZoomFactor		    "118"
+	    ZoomFactor		    "215"
 	    Block {
 	      BlockType		      Inport
 	      Name		      "Throttle"
@@ -2890,14 +3168,13 @@ Model {
 	      "66666666667;0.0745098039215686 0.623529411764706 1;1 0.411764705882353 0.16078431372549;0.392156862745098 0.831"
 	      "372549019608 0.0745098039215686;0.717647058823529 0.274509803921569 1;0.0588235294117647 1 1;1 0.07450980392156"
 	      "86 0.650980392156863],'Title','%<SignalLabel>','LinePropertiesCache',{{}},'UserDefinedChannelNames',{{}},'NumLi"
-	      "nes',1,'LineNames',{{'Throttle'}},'ShowContent',true,'Placement',1)},'DisplayPropertyDefaults',struct('MinYLimR"
-	      "eal','-0.125','MaxYLimReal','1.125','YLabelReal','','MinYLimMag','0.00000','MaxYLimMag','1.125','LegendVisibili"
-	      "ty','off','XGrid',true,'YGrid',true,'PlotMagPhase',false,'AxesColor',[0 0 0],'AxesTickColor',[0.686274509803922"
-	      " 0.686274509803922 0.686274509803922],'ColorOrder',[0.0745098039215686 0.623529411764706 1;1 0.411764705882353 "
-	      "0.16078431372549;1 1 0.0666666666666667;0.717647058823529 0.274509803921569 1;0.392156862745098 0.8313725490196"
-	      "08 0.0745098039215686;0.0588235294117647 1 1;1 0.0745098039215686 0.650980392156863])),extmgr.Configuration('To"
-	      "ols','Plot Navigation',true),extmgr.Configuration('Tools','Measurements',true,'Version','2016a')),'Version','20"
-	      "16a')"
+	      "nes',0,'LineNames',{{[]}},'ShowContent',true,'Placement',1)},'DisplayPropertyDefaults',struct('MinYLimReal','-0"
+	      ".125','MaxYLimReal','1.125','YLabelReal','','MinYLimMag','0.00000','MaxYLimMag','1.125','LegendVisibility','off"
+	      "','XGrid',true,'YGrid',true,'PlotMagPhase',false,'AxesColor',[0 0 0],'AxesTickColor',[0.686274509803922 0.68627"
+	      "4509803922 0.686274509803922],'ColorOrder',[0.0745098039215686 0.623529411764706 1;1 0.411764705882353 0.160784"
+	      "31372549;1 1 0.0666666666666667;0.717647058823529 0.274509803921569 1;0.392156862745098 0.831372549019608 0.074"
+	      "5098039215686;0.0588235294117647 1 1;1 0.0745098039215686 0.650980392156863])),extmgr.Configuration('Tools','Pl"
+	      "ot Navigation',true),extmgr.Configuration('Tools','Measurements',true,'Version','2016a')),'Version','2016a')"
 	    }
 	    Block {
 	      BlockType		      Outport
@@ -2989,7 +3266,7 @@ Model {
 	  Name			  "Scope"
 	  SID			  "518"
 	  Ports			  [1]
-	  Position		  [920, 484, 950, 516]
+	  Position		  [920, 589, 950, 621]
 	  ZOrder		  9
 	  ScopeSpecificationString "Simulink.scopes.TimeScopeBlockCfg('CurrentConfiguration', extmgr.ConfigurationSet(extmgr."
 	  "Configuration('Core','General UI',true),extmgr.Configuration('Core','Source UI',true),extmgr.Configuration('Sources"
@@ -3012,7 +3289,7 @@ Model {
 	  BlockType		  SubSystem
 	  Name			  "TCS (PID)"
 	  SID			  "367"
-	  Ports			  []
+	  Ports			  [2, 1]
 	  Position		  [885, 234, 985, 276]
 	  ZOrder		  -6
 	  LibraryVersion	  "1.225"
@@ -3020,7 +3297,7 @@ Model {
 	  Variant		  off
 	  System {
 	    Name		    "TCS (PID)"
-	    Location		    [-7, 0, 1543, 838]
+	    Location		    [123, 178, 1673, 1016]
 	    Open		    off
 	    ModelBrowserVisibility  on
 	    ModelBrowserWidth	    200
@@ -3033,6 +3310,278 @@ Model {
 	    TiledPageScale	    1
 	    ShowPageBoundaries	    off
 	    ZoomFactor		    "100"
+	    Block {
+	      BlockType		      Inport
+	      Name		      "ax"
+	      SID		      "553"
+	      Position		      [180, 113, 210, 127]
+	      ZOrder		      17
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Inport
+	      Name		      "slip"
+	      SID		      "554"
+	      Position		      [180, 208, 210, 222]
+	      ZOrder		      18
+	      Port		      "2"
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Constant
+	      Name		      "Constant"
+	      SID		      "555"
+	      Position		      [180, 150, 210, 180]
+	      ZOrder		      24
+	      Value		      "0"
+	    }
+	    Block {
+	      BlockType		      Constant
+	      Name		      "Constant1"
+	      SID		      "556"
+	      Position		      [180, 50, 210, 80]
+	      ZOrder		      26
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "PID Controller"
+	      SID		      "557"
+	      Ports		      [1, 1]
+	      Position		      [415, 207, 455, 243]
+	      ZOrder		      22
+	      LibraryVersion	      "1.386"
+	      SourceBlock	      "simulink/Continuous/PID Controller"
+	      SourceType	      "PID 1dof"
+	      ContentPreviewEnabled   off
+	      Controller	      "PID"
+	      TimeDomain	      "Continuous-time"
+	      SampleTime	      "-1"
+	      IntegratorMethod	      "Forward Euler"
+	      FilterMethod	      "Forward Euler"
+	      Form		      "Parallel"
+	      UseFilter		      on
+	      ControllerParametersSource "internal"
+	      P			      "1"
+	      I			      "0"
+	      D			      "0"
+	      N			      "100"
+	      InitialConditionSource  "internal"
+	      InitialConditionForIntegrator "0"
+	      InitialConditionForFilter	"0"
+	      ExternalReset	      "none"
+	      IgnoreLimit	      off
+	      ZeroCross		      on
+	      LimitOutput	      off
+	      UpperSaturationLimit    "inf"
+	      LowerSaturationLimit    "-inf"
+	      LinearizeAsGain	      on
+	      AntiWindupMode	      "none"
+	      Kb		      "1"
+	      TrackingMode	      off
+	      Kt		      "1"
+	      RndMeth		      "Floor"
+	      SaturateOnIntegerOverflow	off
+	      LockScale		      off
+	      PParamMin		      "[]"
+	      PParamMax		      "[]"
+	      PParamDataTypeStr	      "Inherit: Inherit via internal rule"
+	      IParamMin		      "[]"
+	      IParamMax		      "[]"
+	      IParamDataTypeStr	      "Inherit: Inherit via internal rule"
+	      DParamMin		      "[]"
+	      DParamMax		      "[]"
+	      DParamDataTypeStr	      "Inherit: Inherit via internal rule"
+	      NParamMin		      "[]"
+	      NParamMax		      "[]"
+	      NParamDataTypeStr	      "Inherit: Inherit via internal rule"
+	      KbParamMin	      "[]"
+	      KbParamMax	      "[]"
+	      KbParamDataTypeStr      "Inherit: Inherit via internal rule"
+	      KtParamMin	      "[]"
+	      KtParamMax	      "[]"
+	      KtParamDataTypeStr      "Inherit: Inherit via internal rule"
+	      POutMin		      "[]"
+	      POutMax		      "[]"
+	      POutDataTypeStr	      "Inherit: Inherit via internal rule"
+	      PGainOutDataTypeStr     "Inherit: Inherit via internal rule"
+	      PProdOutDataTypeStr     "Inherit: Inherit via internal rule"
+	      IOutMin		      "[]"
+	      IOutMax		      "[]"
+	      IOutDataTypeStr	      "Inherit: Inherit via internal rule"
+	      IGainOutDataTypeStr     "Inherit: Inherit via internal rule"
+	      IProdOutDataTypeStr     "Inherit: Inherit via internal rule"
+	      DOutMin		      "[]"
+	      DOutMax		      "[]"
+	      DOutDataTypeStr	      "Inherit: Inherit via internal rule"
+	      DGainOutDataTypeStr     "Inherit: Inherit via internal rule"
+	      DProdOutDataTypeStr     "Inherit: Inherit via internal rule"
+	      NOutMin		      "[]"
+	      NOutMax		      "[]"
+	      NOutDataTypeStr	      "Inherit: Inherit via internal rule"
+	      NGainOutDataTypeStr     "Inherit: Inherit via internal rule"
+	      NProdOutDataTypeStr     "Inherit: Inherit via internal rule"
+	      KbOutMin		      "[]"
+	      KbOutMax		      "[]"
+	      KbOutDataTypeStr	      "Inherit: Inherit via internal rule"
+	      KtOutMin		      "[]"
+	      KtOutMax		      "[]"
+	      KtOutDataTypeStr	      "Inherit: Inherit via internal rule"
+	      IntegratorOutMin	      "[]"
+	      IntegratorOutMax	      "[]"
+	      IntegratorOutDataTypeStr "Inherit: Inherit via internal rule"
+	      FilterOutMin	      "[]"
+	      FilterOutMax	      "[]"
+	      FilterOutDataTypeStr    "Inherit: Inherit via internal rule"
+	      SumOutMin		      "[]"
+	      SumOutMax		      "[]"
+	      SumOutDataTypeStr	      "Inherit: Inherit via internal rule"
+	      SumI1OutMin	      "[]"
+	      SumI1OutMax	      "[]"
+	      SumI1OutDataTypeStr     "Inherit: Inherit via internal rule"
+	      SumI2OutMin	      "[]"
+	      SumI2OutMax	      "[]"
+	      SumI2OutDataTypeStr     "Inherit: Inherit via internal rule"
+	      SumI3OutMin	      "[]"
+	      SumI3OutMax	      "[]"
+	      SumI3OutDataTypeStr     "Inherit: Inherit via internal rule"
+	      SumDOutMin	      "[]"
+	      SumDOutMax	      "[]"
+	      SumDOutDataTypeStr      "Inherit: Inherit via internal rule"
+	      SumAccumDataTypeStr     "Inherit: Inherit via internal rule"
+	      SumI1AccumDataTypeStr   "Inherit: Inherit via internal rule"
+	      SumI2AccumDataTypeStr   "Inherit: Inherit via internal rule"
+	      SumI3AccumDataTypeStr   "Inherit: Inherit via internal rule"
+	      SumDAccumDataTypeStr    "Inherit: Inherit via internal rule"
+	      SaturationOutMin	      "[]"
+	      SaturationOutMax	      "[]"
+	      SaturationOutDataTypeStr "Inherit: Same as input"
+	      IntegratorContinuousStateAttributes "''"
+	      IntegratorStateMustResolveToSignalObject off
+	      IntegratorRTWStateStorageClass "Auto"
+	      FilterContinuousStateAttributes "''"
+	      FilterStateMustResolveToSignalObject off
+	      FilterRTWStateStorageClass "Auto"
+	      DifferentiatorICPrevScaledInput "0"
+	      DifferentiatorOutMin    "[]"
+	      DifferentiatorOutMax    "[]"
+	      DifferentiatorOutDataTypeStr "Inherit: Inherit via internal rule"
+	    }
+	    Block {
+	      BlockType		      Product
+	      Name		      "Product"
+	      SID		      "558"
+	      Ports		      [2, 1]
+	      Position		      [535, 112, 565, 143]
+	      ZOrder		      25
+	      InputSameDT	      off
+	      OutDataTypeStr	      "Inherit: Inherit via internal rule"
+	      RndMeth		      "Floor"
+	      SaturateOnIntegerOverflow	off
+	    }
+	    Block {
+	      BlockType		      Constant
+	      Name		      "Reference slip_t"
+	      SID		      "559"
+	      Position		      [180, 280, 210, 310]
+	      ZOrder		      20
+	      Value		      "0.12"
+	    }
+	    Block {
+	      BlockType		      Sum
+	      Name		      "Subtract"
+	      SID		      "560"
+	      Ports		      [2, 1]
+	      Position		      [320, 207, 350, 238]
+	      ZOrder		      21
+	      Inputs		      "+-"
+	      InputSameDT	      off
+	      OutDataTypeStr	      "Inherit: Inherit via internal rule"
+	      SaturateOnIntegerOverflow	off
+	    }
+	    Block {
+	      BlockType		      Switch
+	      Name		      "Switch"
+	      SID		      "561"
+	      Position		      [350, 100, 400, 140]
+	      ZOrder		      23
+	      InputSameDT	      off
+	      SaturateOnIntegerOverflow	off
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "T_TCS"
+	      SID		      "562"
+	      Position		      [720, 123, 750, 137]
+	      ZOrder		      19
+	      IconDisplay	      "Port number"
+	    }
+	    Line {
+	      ZOrder		      4
+	      SrcBlock		      "slip"
+	      SrcPort		      1
+	      DstBlock		      "Subtract"
+	      DstPort		      1
+	    }
+	    Line {
+	      ZOrder		      5
+	      SrcBlock		      "Reference slip_t"
+	      SrcPort		      1
+	      Points		      [52, 0; 0, -65]
+	      DstBlock		      "Subtract"
+	      DstPort		      2
+	    }
+	    Line {
+	      ZOrder		      6
+	      SrcBlock		      "Subtract"
+	      SrcPort		      1
+	      DstBlock		      "PID Controller"
+	      DstPort		      1
+	    }
+	    Line {
+	      ZOrder		      7
+	      SrcBlock		      "ax"
+	      SrcPort		      1
+	      DstBlock		      "Switch"
+	      DstPort		      2
+	    }
+	    Line {
+	      ZOrder		      8
+	      SrcBlock		      "Switch"
+	      SrcPort		      1
+	      DstBlock		      "Product"
+	      DstPort		      1
+	    }
+	    Line {
+	      ZOrder		      9
+	      SrcBlock		      "PID Controller"
+	      SrcPort		      1
+	      Points		      [35, 0; 0, -90]
+	      DstBlock		      "Product"
+	      DstPort		      2
+	    }
+	    Line {
+	      ZOrder		      10
+	      SrcBlock		      "Product"
+	      SrcPort		      1
+	      DstBlock		      "T_TCS"
+	      DstPort		      1
+	    }
+	    Line {
+	      ZOrder		      11
+	      SrcBlock		      "Constant1"
+	      SrcPort		      1
+	      Points		      [67, 0; 0, 40]
+	      DstBlock		      "Switch"
+	      DstPort		      1
+	    }
+	    Line {
+	      ZOrder		      12
+	      SrcBlock		      "Constant"
+	      SrcPort		      1
+	      Points		      [65, 0; 0, -30]
+	      DstBlock		      "Switch"
+	      DstPort		      3
+	    }
 	  }
 	}
 	Block {
@@ -3082,7 +3631,7 @@ Model {
 	  Name			  "To Workspace3"
 	  SID			  "517"
 	  Ports			  [1]
-	  Position		  [905, 415, 965, 445]
+	  Position		  [905, 520, 965, 550]
 	  ZOrder		  8
 	  VariableName		  "slip"
 	  MaxDataPoints		  "inf"
@@ -3096,7 +3645,7 @@ Model {
 	  Name			  "slip calculation"
 	  SID			  "208"
 	  Ports			  [0, 1]
-	  Position		  [550, 409, 650, 451]
+	  Position		  [550, 514, 650, 556]
 	  ZOrder		  -7
 	  LibraryVersion	  "1.225"
 	  RequestExecContextInheritance	off
@@ -3448,7 +3997,7 @@ Model {
 	  Labels		  [0, 0]
 	  SrcBlock		  "Bus\nSelector"
 	  SrcPort		  1
-	  Points		  [47, 0; 0, -30]
+	  Points		  [47, 0; 0, -25]
 	  Branch {
 	    ZOrder		    14
 	    DstBlock		    "To Workspace"
@@ -3498,7 +4047,45 @@ Model {
 	  }
 	  Branch {
 	    ZOrder		    23
-	    DstBlock		    "To Workspace3"
+	    Points		    [111, 0]
+	    Branch {
+	      ZOrder		      34
+	      Points		      [0, -185]
+	      Branch {
+		ZOrder			42
+		Points			[0, -85]
+		DstBlock		"TCS (PID)"
+		DstPort			2
+	      }
+	      Branch {
+		ZOrder			41
+		DstBlock		"ABS (PID)"
+		DstPort			2
+	      }
+	    }
+	    Branch {
+	      ZOrder		      33
+	      DstBlock		      "To Workspace3"
+	      DstPort		      1
+	    }
+	  }
+	}
+	Line {
+	  Name			  "<ax>"
+	  ZOrder		  28
+	  Labels		  [0, 0]
+	  SrcBlock		  "Bus\nSelector"
+	  SrcPort		  3
+	  Points		  [41, 0; 0, 101; 571, 0; 0, -156]
+	  Branch {
+	    ZOrder		    39
+	    Points		    [0, -85]
+	    DstBlock		    "TCS (PID)"
+	    DstPort		    1
+	  }
+	  Branch {
+	    ZOrder		    38
+	    DstBlock		    "ABS (PID)"
 	    DstPort		    1
 	  }
 	}
@@ -4220,7 +4807,7 @@ Model {
       System {
 	Name			"Longitudinal \nvehicle dynamics"
 	Location		[123, 178, 1673, 1016]
-	Open			off
+	Open			on
 	ModelBrowserVisibility	on
 	ModelBrowserWidth	200
 	ScreenColor		"white"
@@ -4231,7 +4818,7 @@ Model {
 	TiledPaperMargins	[1.270000, 1.270000, 1.270000, 1.270000]
 	TiledPageScale		1
 	ShowPageBoundaries	off
-	ZoomFactor		"204"
+	ZoomFactor		"203"
 	Block {
 	  BlockType		  Inport
 	  Name			  "Fx"
@@ -4250,6 +4837,12 @@ Model {
 	  ParamDataTypeStr	  "Inherit: Inherit via internal rule"
 	  OutDataTypeStr	  "Inherit: Inherit via internal rule"
 	  SaturateOnIntegerOverflow off
+	  Port {
+	    PortNumber		    1
+	    Name		    "ax"
+	    RTWStorageClass	    "Auto"
+	    DataLoggingNameMode	    "SignalName"
+	  }
 	}
 	Block {
 	  BlockType		  Goto
@@ -4358,6 +4951,7 @@ Model {
 	  IconDisplay		  "Port number"
 	}
 	Line {
+	  Name			  "ax"
 	  ZOrder		  1
 	  SrcBlock		  "1/m"
 	  SrcPort		  1
@@ -4369,6 +4963,7 @@ Model {
 	  }
 	  Branch {
 	    ZOrder		    3
+	    Labels		    [1, 1]
 	    Points		    [0, 160]
 	    Branch {
 	      ZOrder		      4
@@ -4513,7 +5108,7 @@ Model {
       System {
 	Name			"Sensors"
 	Location		[123, 178, 1673, 1016]
-	Open			on
+	Open			off
 	ModelBrowserVisibility	on
 	ModelBrowserWidth	200
 	ScreenColor		"white"
