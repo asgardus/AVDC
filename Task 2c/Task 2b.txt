@@ -7,8 +7,26 @@ min
 k_t = 0.7356
 wheel_t = 28.6
 acc_t = 3.74
+acc_dist=45.54m
 
-min braking dist
+cruise dist=75m
+cruise time=3 seconds
+cruise velocity=25m/s
+
+min braking dist (dist and time wrt to when braking starts-not absolute time distance scale)
+time at which braking starts:6.74s
 k_b=0.7268
-veh_dist=102.187699538084 m
-b_t=7.7262652056297 s
+veh_dist=56.64m  		%102.187699538084 m
+b_t=3.986s				%7.7262652056297 s
+
+braking dist with locked wheels
+k_b=1
+lock_dist=75.01m
+lock_braking_time=5.6716s
+
+Inc in braking dist=18.37 m
+inc in braking time=
+
+Train
+acc_time=2.77s
+acc_dist=33.48m

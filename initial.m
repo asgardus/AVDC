@@ -13,7 +13,7 @@ clc
 global Veh
 %% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %  Choose input parameters
-Vehicle = 'Road'            % set Road or Rail for the vehicle parameters
+Vehicle = 'Rail'            % set Road or Rail for the vehicle parameters
 
 Task = 2;
 dt = 0.001;
