@@ -28,5 +28,6 @@ Inc in braking dist=18.37 m
 inc in braking time=
 
 Train
+k_t= 0.21(approx)
 acc_time=2.77s
 acc_dist=33.48m
