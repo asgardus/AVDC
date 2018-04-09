@@ -1,9 +1,9 @@
 close all
 clear all
-k_t=0.21; %0.7356; %k_t for min acc_time is used for braking %0 %for acceleration and then change k_t in the loop
-k_b=0.0;%0.7268  % -optimum k_b for shortest braking dist   %0 for braking and change in loop %0.6 for acceleration and remains constant
+k_t=0.20; %0.7356; %k_t for min acc_time is used for braking %0 %for acceleration and then change k_t in the loop
+k_b=0.2;%0.7268  % -optimum k_b for shortest braking dist   %0 for braking and change in loop %0.6 for acceleration and remains constant
 d=1;
-for k_b=0.1:0.1:1 %rail
+% for k_b=0.1:0.1:1 %rail
     %for k_t=0.7355:0.0001:0.736 Road_wet_acc_time
 % for k_b=0.7260:0.0002:0.7270  %braking
     for mu_select = 1;              % set friction to mu_select = 1 (dry road), 2 (wet 
@@ -54,7 +54,7 @@ for k_b=0.1:0.1:1 %rail
     end
     d=d+1;
     end
-end
+% end
 close(h)
 figure(4);
 plot(b_d)
