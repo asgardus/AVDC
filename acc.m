@@ -27,21 +27,21 @@ for mu_select = 2;              % set friction to mu_select = 1 (dry road), 2 (w
             break
         end
     end
-    for j=i:length(veh_x.time)      %loop for finding shortest braking distance #gives k_b
-        %j=i is used so that the time is obtained after reaching 25m/s,
-        %subtract 3seconds to obtain braking time, and 3*25 m from the braking distance. 
-        if veh_x.Data(j) <= 0.000
-            b_t(d)=veh_x.time(j)-(3); %add acc_t when removing for loop %the time taken from application of brake to vehicle halt
-            b_d(d)=veh_dist.data(j)-(75); %add acc_d when removing for loop%the dist taken from application of brake to vehicle halt
-            wheel_b(d)=wheel_x.Data(j);
-           
-            
-            break
-        end
-    end
+%     for j=i:length(veh_x.time)      %loop for finding shortest braking distance #gives k_b
+%         %j=i is used so that the time is obtained after reaching 25m/s,
+%         %subtract 3seconds to obtain braking time, and 3*25 m from the braking distance. 
+%         if veh_x.Data(j) <= 0.000
+%             b_t(d)=veh_x.time(j)-(3); %add acc_t when removing for loop %the time taken from application of brake to vehicle halt
+%             b_d(d)=veh_dist.data(j)-(75); %add acc_d when removing for loop%the dist taken from application of brake to vehicle halt
+%             wheel_b(d)=wheel_x.Data(j);
+%            
+%             
+%             break
+%         end
+%     end
     d=d+1;
     end
 end
 close(h)
-figure(4);
-plot(b_d)
+% figure(4);
+% plot(b_d)
