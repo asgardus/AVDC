@@ -6,14 +6,12 @@ d=1;
 pc=[100 300 750 1200 2000];
 ic=[100 300 750 1200 2000];
 dc=[100 300 750 1200 2000];
-% for i=1:5    
+for i=1:5    
 for mu_select = 2;              % set friction to mu_select = 1 (dry road), 2 (wet road) or 3 (snow) for road and 1 for rail
-    P_t=2250;
+    P_t=0;
     D_t=0;
     I_t=0;
-    P_b=0;
-    D_b=0;
-    I_b=0;
+    P
     initial;
     simOut = sim('slip_model_Student.mdl');
 
@@ -48,7 +46,7 @@ for mu_select = 2;              % set friction to mu_select = 1 (dry road), 2 (w
 %     end
     d=d+1;
 end
-% end
+end
 close(h)
 figure(3);
 plot(acc_t)
