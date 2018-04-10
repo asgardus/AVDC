@@ -6,7 +6,7 @@
 %  Teacher: Mohammad Mehdi Davari
 % %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-clc
+% clc
 % clear all
 % close all
 
