@@ -7,7 +7,7 @@ Model {
     NumRootInports	    0
     NumRootOutports	    0
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.64"
+    ComputedModelVersion    "1.66"
     NumModelReferences	    0
     NumTestPointedSignals   2
     TestPointedSignal {
@@ -70,10 +70,10 @@ Model {
 	$ClassName		"Simulink.EditorInfo"
 	IsActive		[1]
 	ViewObjType		"SimulinkSubsys"
-	LoadSaveID		"188"
+	LoadSaveID		"457"
 	Extents			[1685.0, 837.0]
-	ZoomFactor		[0.98479903012216707]
-	Offset			[72.908901515151456, 12.032159090908692]
+	ZoomFactor		[2.15]
+	Offset			[113.48837209302326, 0.0]
       }
     }
   }
@@ -86,9 +86,9 @@ Model {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "Dell"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Wed Apr 11 09:36:58 2018"
-  RTWModifiedTimeStamp	  445340013
-  ModelVersionFormat	  "1.%<AutoIncrement:64>"
+  LastModifiedDate	  "Wed Apr 11 09:39:54 2018"
+  RTWModifiedTimeStamp	  445340391
+  ModelVersionFormat	  "1.%<AutoIncrement:66>"
   ConfigurationManager	  "none"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -2359,7 +2359,7 @@ Model {
     ShowPageBoundaries	    off
     ZoomFactor		    "143"
     ReportName		    "simulink-default.rpt"
-    SIDHighWatermark	    "585"
+    SIDHighWatermark	    "589"
     Block {
       BlockType		      SubSystem
       Name		      "Actuator"
@@ -2748,7 +2748,7 @@ Model {
       System {
 	Name			"Controller"
 	Location		[-7, -7, 1543, 831]
-	Open			on
+	Open			off
 	ModelBrowserVisibility	on
 	ModelBrowserWidth	200
 	ScreenColor		"white"
@@ -2790,7 +2790,7 @@ Model {
 	  BlockType		  SubSystem
 	  Name			  "ABS (PID)"
 	  SID			  "457"
-	  Ports			  [2, 1]
+	  Ports			  [3, 1]
 	  Position		  [750, 369, 850, 411]
 	  ZOrder		  -4
 	  LibraryVersion	  "1.225"
@@ -2799,7 +2799,7 @@ Model {
 	  System {
 	    Name		    "ABS (PID)"
 	    Location		    [-7, -7, 1543, 831]
-	    Open		    off
+	    Open		    on
 	    ModelBrowserVisibility  on
 	    ModelBrowserWidth	    200
 	    ScreenColor		    "white"
@@ -2829,6 +2829,15 @@ Model {
 	      IconDisplay	      "Port number"
 	    }
 	    Block {
+	      BlockType		      Inport
+	      Name		      "Brakepedal\n"
+	      SID		      "586"
+	      Position		      [365, 48, 395, 62]
+	      ZOrder		      17
+	      Port		      "3"
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
 	      BlockType		      Constant
 	      Name		      "Constant"
 	      SID		      "550"
@@ -2841,6 +2850,21 @@ Model {
 	      SID		      "552"
 	      Position		      [155, 40, 185, 70]
 	      ZOrder		      16
+	      Value		      "0"
+	    }
+	    Block {
+	      BlockType		      Constant
+	      Name		      "Constant2"
+	      SID		      "588"
+	      Position		      [345, 0, 375, 30]
+	      ZOrder		      19
+	    }
+	    Block {
+	      BlockType		      Constant
+	      Name		      "Constant3"
+	      SID		      "589"
+	      Position		      [415, 65, 445, 95]
+	      ZOrder		      20
 	      Value		      "0"
 	    }
 	    Block {
@@ -2971,9 +2995,10 @@ Model {
 	      BlockType		      Product
 	      Name		      "Product"
 	      SID		      "551"
-	      Ports		      [2, 1]
-	      Position		      [510, 102, 540, 133]
+	      Ports		      [3, 1]
+	      Position		      [580, 104, 610, 136]
 	      ZOrder		      15
+	      Inputs		      "3"
 	      InputSameDT	      off
 	      OutDataTypeStr	      "Inherit: Inherit via internal rule"
 	      RndMeth		      "Floor"
@@ -2985,7 +3010,7 @@ Model {
 	      SID		      "536"
 	      Position		      [155, 270, 185, 300]
 	      ZOrder		      7
-	      Value		      "0.2"
+	      Value		      "0.14"
 	    }
 	    Block {
 	      BlockType		      Sum
@@ -3003,8 +3028,18 @@ Model {
 	      BlockType		      Switch
 	      Name		      "Switch"
 	      SID		      "549"
-	      Position		      [325, 90, 375, 130]
+	      Position		      [325, 100, 375, 140]
 	      ZOrder		      13
+	      Criteria		      "u2 > Threshold"
+	      InputSameDT	      off
+	      SaturateOnIntegerOverflow	off
+	    }
+	    Block {
+	      BlockType		      Switch
+	      Name		      "Switch1"
+	      SID		      "587"
+	      Position		      [500, 10, 550, 50]
+	      ZOrder		      18
 	      Criteria		      "u2 > Threshold"
 	      InputSameDT	      off
 	      SaturateOnIntegerOverflow	off
@@ -3043,23 +3078,24 @@ Model {
 	      ZOrder		      10
 	      SrcBlock		      "ax"
 	      SrcPort		      1
+	      Points		      [65, 0; 0, 10]
 	      DstBlock		      "Switch"
 	      DstPort		      2
 	    }
 	    Line {
-	      ZOrder		      12
+	      ZOrder		      22
 	      SrcBlock		      "Switch"
 	      SrcPort		      1
 	      DstBlock		      "Product"
-	      DstPort		      1
+	      DstPort		      2
 	    }
 	    Line {
-	      ZOrder		      14
+	      ZOrder		      21
 	      SrcBlock		      "PID Controller"
 	      SrcPort		      1
-	      Points		      [35, 0; 0, -90]
+	      Points		      [35, 0; 0, -85]
 	      DstBlock		      "Product"
-	      DstPort		      2
+	      DstPort		      3
 	    }
 	    Line {
 	      ZOrder		      15
@@ -3072,7 +3108,7 @@ Model {
 	      ZOrder		      16
 	      SrcBlock		      "Constant1"
 	      SrcPort		      1
-	      Points		      [67, 0; 0, 40]
+	      Points		      [67, 0; 0, 43; 53, 0]
 	      DstBlock		      "Switch"
 	      DstPort		      1
 	    }
@@ -3080,9 +3116,40 @@ Model {
 	      ZOrder		      17
 	      SrcBlock		      "Constant"
 	      SrcPort		      1
-	      Points		      [65, 0; 0, -30]
+	      Points		      [65, 0; 0, -20]
 	      DstBlock		      "Switch"
 	      DstPort		      3
+	    }
+	    Line {
+	      ZOrder		      18
+	      SrcBlock		      "Brakepedal\n"
+	      SrcPort		      1
+	      Points		      [48, 0; 0, -25]
+	      DstBlock		      "Switch1"
+	      DstPort		      2
+	    }
+	    Line {
+	      ZOrder		      19
+	      SrcBlock		      "Constant2"
+	      SrcPort		      1
+	      DstBlock		      "Switch1"
+	      DstPort		      1
+	    }
+	    Line {
+	      ZOrder		      20
+	      SrcBlock		      "Constant3"
+	      SrcPort		      1
+	      Points		      [24, 0; 0, -35]
+	      DstBlock		      "Switch1"
+	      DstPort		      3
+	    }
+	    Line {
+	      ZOrder		      23
+	      SrcBlock		      "Switch1"
+	      SrcPort		      1
+	      Points		      [9, 0; 0, 80]
+	      DstBlock		      "Product"
+	      DstPort		      1
 	    }
 	  }
 	}
@@ -4299,8 +4366,18 @@ Model {
 	  ZOrder		  1
 	  SrcBlock		  "Throttle"
 	  SrcPort		  1
-	  DstBlock		  "Feedforward"
-	  DstPort		  1
+	  Points		  [336, 0]
+	  Branch {
+	    ZOrder		    147
+	    Points		    [0, 290]
+	    DstBlock		    "ABS (PID)"
+	    DstPort		    3
+	  }
+	  Branch {
+	    ZOrder		    146
+	    DstBlock		    "Feedforward"
+	    DstPort		    1
+	  }
 	}
 	Line {
 	  ZOrder		  2
@@ -4395,6 +4472,7 @@ Model {
 	    }
 	    Branch {
 	      ZOrder		      41
+	      Points		      [105, 0]
 	      DstBlock		      "ABS (PID)"
 	      DstPort		      2
 	    }
@@ -4415,6 +4493,7 @@ Model {
 	  }
 	  Branch {
 	    ZOrder		    65
+	    Points		    [141, 0]
 	    DstBlock		    "ABS (PID)"
 	    DstPort		    1
 	  }
@@ -5241,7 +5320,7 @@ Model {
       "ignalLabel>','LinePropertiesCache',{{}},'UserDefinedChannelNames',{{}},'NumLines',0,'LineNames',{{[]}},'ShowCont"
       "ent',true,'Placement',1)),extmgr.Configuration('Tools','Plot Navigation',true,'OnceAtStop',false,'PreviousAutosc"
       "ale','XY'),extmgr.Configuration('Tools','Measurements',true,'Version','2016a')),'Version','2016a','Location',[1 "
-      "74.1999999999999 1537 823],'VisibleAtModelOpen','on')"
+      "74.1999999999999 1537 823])"
     }
     Block {
       BlockType		      SubSystem
