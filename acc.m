@@ -12,11 +12,11 @@ for j=1:length(pc);
     P_b=0;
     D_b=0;
     I_b=0;
-=======
+
 % k_t=0.7356; 
 % k_b=0.7268;
 d=1;
-=======
+
 % k_t=0.7356; 
 % k_b=0.7268;
 d=1;
@@ -73,7 +73,7 @@ end
 close(h)
 figure(3);
 plot(acc_t)
-=======
+
 % close(h)
 % figure(3);
 % plot(acc_t)

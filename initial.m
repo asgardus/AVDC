@@ -117,19 +117,15 @@ Ki_em = 1;
 Ki_brake = 1;
 Kd_em = 1;
 Kd_brake = 1;
-<<<<<<< HEAD
-<<<<<<< HEAD
-k_t = 0.23;
-k_b = 0.7268;
-=======
-=======
-
->>>>>>> 9bf732e2b99079f180b9648e9fb2efbb78a0f19b
 
 
 
 
->>>>>>> 9bf732e2b99079f180b9648e9fb2efbb78a0f19b
+
+
+
+
+
 %% tire model - force-slip-curves
 h=figure(1);
 slip0 = -1:0.01:2;
