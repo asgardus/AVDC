@@ -13,9 +13,8 @@
 global Veh
 %% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %  Choose input parameters
-Vehicle = 'Road'            % set Road or Rail for the vehicle parameters
-mu_select = 2;
-Task = 3;
+Vehicle = 'Rail'            % set Road or Rail for the vehicle parameters
+% mu_select = 3;
 dt = 0.001;
 %% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Vehicle parameters
