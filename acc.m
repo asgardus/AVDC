@@ -1,7 +1,5 @@
 close all
 clear all
-<<<<<<< HEAD
-<<<<<<< HEAD
 d=1;
 pc=[0 10 100 1000 10000 100000 100000 1000000];
 ic=[100 300 750 1200 2000];
@@ -22,7 +20,6 @@ d=1;
 % k_t=0.7356; 
 % k_b=0.7268;
 d=1;
->>>>>>> 9bf732e2b99079f180b9648e9fb2efbb78a0f19b
 pc=[-10000 -10000 -18000];
 ic=[0 1 -1];
 dc=[-400 0 -350];
@@ -38,10 +35,6 @@ for k=1:3           % set friction to mu_select = 1 (dry road), 2 (wet road) or 
 p=pc(k)
  i=ic(k)
 di=dc(k)
-<<<<<<< HEAD
->>>>>>> 9bf732e2b99079f180b9648e9fb2efbb78a0f19b
-=======
->>>>>>> 9bf732e2b99079f180b9648e9fb2efbb78a0f19b
     initial;
     simOut = sim('slip_model_Student.mdl');
 
@@ -77,8 +70,6 @@ di=dc(k)
     d=d+1;
 end
 % end
-<<<<<<< HEAD
-<<<<<<< HEAD
 close(h)
 figure(3);
 plot(acc_t)
@@ -86,12 +77,8 @@ plot(acc_t)
 % close(h)
 % figure(3);
 % plot(acc_t)
->>>>>>> 9bf732e2b99079f180b9648e9fb2efbb78a0f19b
-=======
 % close(h)
 % figure(3);
 % plot(acc_t)
->>>>>>> 9bf732e2b99079f180b9648e9fb2efbb78a0f19b
-
 figure(4);
 plot(b_d)
