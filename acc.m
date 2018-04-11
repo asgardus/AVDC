@@ -1,5 +1,22 @@
 close all
 clear all
+d=1;
+pc=[0 10 100 1000 10000 100000 100000 1000000];
+ic=[100 300 750 1200 2000];
+dc=[100 300 750 1200 2000];
+% for mu_select = 1:3;              % set friction to mu_select = 1 (dry road), 2 (wet road) or 3 (snow) for road and 1 for rail
+for j=1:length(pc);    
+    P_t=pc(j);
+    D_t=0;
+    I_t=0;
+    P_b=0;
+    D_b=0;
+    I_b=0;
+=======
+% k_t=0.7356; 
+% k_b=0.7268;
+d=1;
+=======
 % k_t=0.7356; 
 % k_b=0.7268;
 d=1;
@@ -53,9 +70,15 @@ di=dc(k)
     d=d+1;
 end
 % end
+close(h)
+figure(3);
+plot(acc_t)
+=======
 % close(h)
 % figure(3);
 % plot(acc_t)
-
+% close(h)
+% figure(3);
+% plot(acc_t)
 figure(4);
 plot(b_d)
