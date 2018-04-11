@@ -14,7 +14,7 @@ global Veh
 %% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %  Choose input parameters
 Vehicle = 'Road'            % set Road or Rail for the vehicle parameters
-mu_select = 3;
+mu_select = 1;
 dt = 0.001;
 %% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Vehicle parameters
@@ -47,6 +47,8 @@ switch Vehicle
         Veh.r = 0.3; % rolling radius for tire in m
         Veh.mu = [1 0.7 0.3]; % friction coefficients [snow, rain and dry]
         tire_leg={'\mu = 1','\mu = 0.7','\mu = 0.3'};
+        k_t = 0.7356;
+        k_b = 0.7268;
         switch mu_select
             case {1}
                 Veh.Bx = Veh.Bx(1); 
@@ -93,6 +95,8 @@ switch Vehicle
         Veh.mu = 0.2; % friction coefficients [snow, rain and dry]  
         tire_leg={'\mu = 0.2'};
         mu_select = 1;
+        k_t=0.23;
+        k_b=0.20;
 end
 
 %% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -113,8 +117,7 @@ Ki_em = 1;
 Ki_brake = 1;
 Kd_em = 1;
 Kd_brake = 1;
-k_t = 0.7356;
-k_b = 0.7268;
+
 
 
 
