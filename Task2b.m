@@ -3,7 +3,9 @@ clear all
 k_t=0;
 k_b=0.6;
 d=1;
-for k_t=0.2:0.01:0.3
+kt = [0.7356 0.73574];
+for j=1:length(kt);
+    k_t = kt(j);
     for mu_select = 2;              % set friction to mu_select = 1 (dry road), 2 (wet 
                             % road) or 3 (snow) for road and 1 for rail
     initial;
@@ -14,7 +16,7 @@ for k_t=0.2:0.01:0.3
     plot(veh_x);
     hold on
     figure(5);
-    plot(wheel_x);
+    plot(slip);
     hold on
     i=1;
     for i=1:length(veh_x.time)
