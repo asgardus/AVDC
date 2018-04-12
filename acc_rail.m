@@ -3,9 +3,10 @@ clear all
 % k_t=0.7356; 
 % k_b=0.7268;
 d=1;
-pc=[1000000 50000];
-% ic=[0 1 -1];
-% dc=[-400 0 -350];
+% pc=[0 -80000 -600000 -900000];
+% ic=[-1 -100 -1000 -10000 -100000 -1000000];
+% 
+dc=[-40000 -60000];
 for k=1:2           % set friction to mu_select = 1 (dry road), 2 (wet road) or 3 (snow) for road and 1 for rail
 % for j=1:length(pc);    
 %     P_t=20000;
@@ -15,9 +16,9 @@ for k=1:2           % set friction to mu_select = 1 (dry road), 2 (wet road) or 
 %     P_b=-10000;
 %     D_b=0;
 %     I_b=0;
-p=pc(k)
-%  i=ic(k)
-% di=dc(k)
+% p=pc(k)
+%  ii=ic(k)
+di=dc(k)
     initial;
     simOut = sim('slip_model_Student.mdl');
 
