@@ -6,15 +6,15 @@
 %  Teacher: Mohammad Mehdi Davari
 % %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-% clc
-% clear all
-% close all
+clc
+clear all
+close all
 
 global Veh
 %% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %  Choose input parameters
-Vehicle = 'Rail'            % set Road or Rail for the vehicle parameters
-mu_select = 1;
+Vehicle = 'Road'            % set Road or Rail for the vehicle parameters
+mu_select = 2;
 dt = 0.001;
 %% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Vehicle parameters
