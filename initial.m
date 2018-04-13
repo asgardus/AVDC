@@ -46,6 +46,8 @@ switch Vehicle
         Veh.r = 0.3; % rolling radius for tire in m
         Veh.mu = [1 0.7 0.3]; % friction coefficients [snow, rain and dry]
         tire_leg={'\mu = 1','\mu = 0.7','\mu = 0.3'};
+        k_t=0.7356;
+        k_b=0.7268;
         switch mu_select
             case {1}
                 Veh.Bx = Veh.Bx(1); 
@@ -91,6 +93,8 @@ switch Vehicle
         Veh.r = 0.46; % rolling radius for tire in m
         Veh.mu = 0.2; % friction coefficients [snow, rain and dry]  
         tire_leg={'\mu = 0.2'};
+        k_t=0.23;
+        k_b=0.20;
         mu_select = 1;
 end
 
