@@ -11,15 +11,15 @@ clc
 clear all
 
 %% mass, spring and damper values and transfer function
-M = 423.23;                     % mass in kg
+M = 395;                     % mass in kg
 K = 20000;                    % spring stiffness coeficient in N/m
 C = 3800;                    % damping coefficient in Ns/m    
 s = tf('s');                % LaPlace parameter
 t = 0:0.01:2;
 %% plot the step response of the different controllers (P,PD,PI and PID)
-KP = 37500;
-KI = 175000;
-KD = 5000;
+KP = 10000;
+KI = 10000;
+KD = 10000;
 figure(3)
 set(gcf,'Position',[100 100 600 600])
 grid on
@@ -31,19 +31,19 @@ ylabel('Amplitude')
 ylim([-0.5 1.5])
 % Slider erzeugen
 KP_Slider = uicontrol('Style', 'slider',...
-'Position', [100 75 120 20],'min',0,'max',1e6,'SliderStep',[0.05 0.1],...
+'Position', [100 75 120 20],'min',0,'max',1e5,'SliderStep',[0.05 0.1],...
 'value',KP,'String','Kp');
 text(0.2,-0.33,'K_{p}=','FontSize',14)
 KP_wert=text(0.4,-0.33,'test','FontSize',14);
 
 KI_Slider = uicontrol('Style', 'slider',...
-'Position', [250 75 120 20],'min',0,'max',1e6,'SliderStep',[0.05 0.1],...
+'Position', [250 75 120 20],'min',0,'max',2e6,'SliderStep',[0.05 0.1],...
 'value',KI,'String','Ki');
 text(0.8,-0.33,'K_{i}=','FontSize',14)
 KI_wert=text(1.0,-0.33,num2str(KI),'FontSize',14);
 
 KD_Slider = uicontrol('Style', 'slider',...
-'Position', [400 75 120 20],'min',0,'max',2e5,'SliderStep',[0.05 0.1],...
+'Position', [400 75 120 20],'min',0,'max',1e6,'SliderStep',[0.05 0.1],...
 'value',KD,'String','Kd');
 text(1.5,-0.33,'K_{d}=','FontSize',14)
 KD_wert=text(1.7,-0.33,num2str(KD),'FontSize',14);
