@@ -1,15 +1,18 @@
 close all
 clear all
 d=1;
-pc=[0 20000]; % no control||PID TCS||PID 
-ic=[0 200];
-dc=[0 1500 ];
-pp=[0 -18000];
-ii=[0 -1];
-dd=[0 -350]
-d=1;
-k=2; %1-no control 2- TCS ABS ON
-% for mu_select = 1:3              % set friction to mu_select = 1 (dry road), 2 (wet road) or 3 (snow) for road and 1 for rail
+%TCS
+pc=[0 40000 7500 20000 20000]; %  no control ||P|| PD || PI || PID 
+ic=[0 0 0 500 200];
+dc=[0 0 700 0 1500 ];
+%ABS
+pp=[0 -10000 -10000 -20000 -18000]; %no ctrl|| P || PD || PI ||PID
+ii=[0 0 0 -1 -1];
+dd=[0 0 -400 0 -350]
+
+% k=2; %1-no control 2- TCS ABS ON
+for k=1:5
+for mu_select = 1:3              % set friction to mu_select = 1 (dry road), 2 (wet road) or 3 (snow) for road and 1 for rail
 
     P_t=pc(k);
     
@@ -17,9 +20,9 @@ k=2; %1-no control 2- TCS ABS ON
     
     I_t=ic(k);
     P_b=pp(k);
-    D_b=ii(k);
-    I_b=dd(k);
-
+    
+    I_b=ii(k);
+    D_b=dd(k);
 % for k=1:3           % set friction to mu_select = 1 (dry road), 2 (wet road) or 3 (snow) for road and 1 for rail
 % for j=1:length(pc);    
 %     P_t=20000;
@@ -63,8 +66,8 @@ k=2; %1-no control 2- TCS ABS ON
 
     end   
         d=d+1;
-%     end
-% end
+    end
+end
 % end
 % close(h)
 figure(3);

@@ -7,7 +7,7 @@ Model {
     NumRootInports	    0
     NumRootOutports	    0
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.74"
+    ComputedModelVersion    "1.76"
     NumModelReferences	    0
     NumTestPointedSignals   1
     TestPointedSignal {
@@ -63,11 +63,11 @@ Model {
 	Object {
 	  $ObjectID		  5
 	  IsActive		  [1]
-	  ViewObjType		  "SimulinkSubsys"
-	  LoadSaveID		  "188"
+	  ViewObjType		  "SimulinkTopLevel"
+	  LoadSaveID		  "0"
 	  Extents		  [1685.0, 833.0]
-	  ZoomFactor		  [1.3881950834757459]
-	  Offset		  [157.03996212121211, 26.976098484848478]
+	  ZoomFactor		  [1.4301191765980497]
+	  Offset		  [365.210606060606, 50.912424242424208]
 	}
 	Object {
 	  $ObjectID		  6
@@ -91,9 +91,9 @@ Model {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "Dell"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Sat Apr 14 16:38:14 2018"
-  RTWModifiedTimeStamp	  445625557
-  ModelVersionFormat	  "1.%<AutoIncrement:74>"
+  LastModifiedDate	  "Sat Apr 14 17:28:09 2018"
+  RTWModifiedTimeStamp	  445637571
+  ModelVersionFormat	  "1.%<AutoIncrement:76>"
   ConfigurationManager	  "none"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -2164,7 +2164,7 @@ Model {
 	  $ObjectID		  61
 	  Version		  "1.16.2"
 	  StartTime		  "0.0"
-	  StopTime		  "20"
+	  StopTime		  "50"
 	  AbsTol		  "auto"
 	  FixedStep		  "auto"
 	  InitialStep		  "auto"
@@ -2814,7 +2814,7 @@ Model {
 	  $ObjectID		  78
 	  Version		  "1.16.2"
 	  StartTime		  "0.0"
-	  StopTime		  "20"
+	  StopTime		  "50"
 	  AbsTol		  "auto"
 	  FixedStep		  "auto"
 	  InitialStep		  "auto"
@@ -3885,7 +3885,7 @@ Model {
   System {
     Name		    "slip_model_Student"
     Location		    [-7, -7, 1543, 831]
-    Open		    off
+    Open		    on
     ModelBrowserVisibility  on
     ModelBrowserWidth	    200
     ScreenColor		    "white"
@@ -4241,7 +4241,7 @@ Model {
       System {
 	Name			"Controller"
 	Location		[-7, -7, 1543, 831]
-	Open			on
+	Open			off
 	ModelBrowserVisibility	on
 	ModelBrowserWidth	200
 	ScreenColor		"white"
@@ -4303,7 +4303,7 @@ Model {
 	    TiledPaperMargins	    [1.270000, 1.270000, 1.270000, 1.270000]
 	    TiledPageScale	    1
 	    ShowPageBoundaries	    off
-	    ZoomFactor		    "258"
+	    ZoomFactor		    "200"
 	    Block {
 	      BlockType		      Inport
 	      Name		      "slip"
@@ -4831,8 +4831,8 @@ Model {
 	  BlockType		  Gain
 	  Name			  "Gain1"
 	  SID			  "603"
-	  Position		  [900, 180, 930, 210]
-	  ZOrder		  22
+	  Position		  [905, 200, 935, 230]
+	  ZOrder		  23
 	  Gain			  "0"
 	  ParamDataTypeStr	  "Inherit: Inherit via internal rule"
 	  OutDataTypeStr	  "Inherit: Inherit via internal rule"
@@ -4953,7 +4953,7 @@ Model {
 	    TiledPaperMargins	    [1.270000, 1.270000, 1.270000, 1.270000]
 	    TiledPageScale	    1
 	    ShowPageBoundaries	    off
-	    ZoomFactor		    "222"
+	    ZoomFactor		    "150"
 	    Block {
 	      BlockType		      Inport
 	      Name		      "slip"
@@ -5115,7 +5115,7 @@ Model {
 	      Name		      "Product"
 	      SID		      "558"
 	      Ports		      [2, 1]
-	      Position		      [535, 111, 565, 144]
+	      Position		      [520, 111, 550, 144]
 	      ZOrder		      25
 	      InputSameDT	      off
 	      OutDataTypeStr	      "Inherit: Inherit via internal rule"
@@ -5134,27 +5134,28 @@ Model {
 	      BlockType		      Scope
 	      Name		      "Scope"
 	      SID		      "601"
-	      Ports		      [1]
-	      Position		      [420, 279, 450, 311]
+	      Ports		      [2]
+	      Position		      [420, 281, 450, 314]
 	      ZOrder		      39
 	      ScopeSpecificationString "Simulink.scopes.TimeScopeBlockCfg('CurrentConfiguration', extmgr.ConfigurationSet(ext"
 	      "mgr.Configuration('Core','General UI',true),extmgr.Configuration('Core','Source UI',true),extmgr.Configuration("
 	      "'Sources','WiredSimulink',true,'DataLoggingVariableName','ScopeData2'),extmgr.Configuration('Visuals','Time Dom"
-	      "ain',true,'SerializedDisplays',{struct('MinYLimReal','-0.63727','MaxYLimReal','0.22636','YLabelReal','','MinYLi"
-	      "mMag','0.00000','MaxYLimMag','0.63727','LegendVisibility','off','XGrid',true,'YGrid',true,'PlotMagPhase',false,"
-	      "'AxesColor',[0 0 0],'AxesTickColor',[0.686274509803922 0.686274509803922 0.686274509803922],'ColorOrder',[1 1 0"
-	      ".0666666666666667;0.0745098039215686 0.623529411764706 1;1 0.411764705882353 0.16078431372549;0.392156862745098"
-	      " 0.831372549019608 0.0745098039215686;0.717647058823529 0.274509803921569 1;0.0588235294117647 1 1;1 0.07450980"
-	      "39215686 0.650980392156863],'Title','%<SignalLabel>','LinePropertiesCache',{{}},'UserDefinedChannelNames',{{}},"
-	      "'NumLines',1,'LineNames',{{'Subtract'}},'ShowContent',true,'Placement',1)},'DisplayPropertyDefaults',struct('Mi"
-	      "nYLimReal','-0.63727','MaxYLimReal','0.22636','YLabelReal','','MinYLimMag','0.00000','MaxYLimMag','0.63727','Le"
-	      "gendVisibility','off','XGrid',true,'YGrid',true,'PlotMagPhase',false,'AxesColor',[0 0 0],'AxesTickColor',[0.686"
-	      "274509803922 0.686274509803922 0.686274509803922],'ColorOrder',[0.0745098039215686 0.623529411764706 1;1 0.4117"
-	      "64705882353 0.16078431372549;1 1 0.0666666666666667;0.717647058823529 0.274509803921569 1;0.392156862745098 0.8"
-	      "31372549019608 0.0745098039215686;0.0588235294117647 1 1;1 0.0745098039215686 0.650980392156863])),extmgr.Confi"
-	      "guration('Tools','Plot Navigation',true,'OnceAtStop',false,'PreviousZoomMode','Pan','PreviousAutoscale','XY'),e"
-	      "xtmgr.Configuration('Tools','Measurements',true,'Version','2016a')),'Version','2016a','Position',[1 41 1920 963"
-	      "])"
+	      "ain',true,'SerializedDisplays',{struct('MinYLimReal','-0.125','MaxYLimReal','1.12497','YLabelReal','','MinYLimM"
+	      "ag','0.00000','MaxYLimMag','1.12497','LegendVisibility','Off','XGrid',true,'YGrid',true,'PlotMagPhase',false,'A"
+	      "xesColor',[0 0 0],'AxesTickColor',[0.686274509803922 0.686274509803922 0.686274509803922],'ColorOrder',[1 1 0.0"
+	      "666666666666667;0.0745098039215686 0.623529411764706 1;1 0.411764705882353 0.16078431372549;0.392156862745098 0"
+	      ".831372549019608 0.0745098039215686;0.717647058823529 0.274509803921569 1;0.0588235294117647 1 1;1 0.0745098039"
+	      "215686 0.650980392156863],'Title','%<SignalLabel>','LinePropertiesCache',{{}},'UserDefinedChannelNames',{{}},'N"
+	      "umLines',2,'LineNames',{{'slip','Reference slip_t'}},'ShowContent',true,'Placement',1)},'DisplayPropertyDefault"
+	      "s',struct('MinYLimReal','-0.125','MaxYLimReal','1.12497','YLabelReal','','MinYLimMag','0.00000','MaxYLimMag','1"
+	      ".12497','LegendVisibility','Off','XGrid',true,'YGrid',true,'PlotMagPhase',false,'AxesColor',[0 0 0],'AxesTickCo"
+	      "lor',[0.686274509803922 0.686274509803922 0.686274509803922],'ColorOrder',[0.0745098039215686 0.623529411764706"
+	      " 1;1 0.411764705882353 0.16078431372549;1 1 0.0666666666666667;0.717647058823529 0.274509803921569 1;0.39215686"
+	      "2745098 0.831372549019608 0.0745098039215686;0.0588235294117647 1 1;1 0.0745098039215686 0.650980392156863])),e"
+	      "xtmgr.Configuration('Tools','Plot Navigation',true,'OnceAtStop',false,'PreviousZoomMode','Pan','PreviousAutosca"
+	      "le','XY'),extmgr.Configuration('Tools','Measurements',true,'Version','2016a')),'Version','2016a','Position',[1 "
+	      "41 1536 748.8])"
+	      NumInputPorts	      "2"
 	    }
 	    Block {
 	      BlockType		      Sum
@@ -5182,7 +5183,7 @@ Model {
 	      BlockType		      Outport
 	      Name		      "T_TCS"
 	      SID		      "562"
-	      Position		      [720, 123, 750, 137]
+	      Position		      [615, 123, 645, 137]
 	      ZOrder		      19
 	      IconDisplay	      "Port number"
 	    }
@@ -5190,26 +5191,25 @@ Model {
 	      ZOrder		      5
 	      SrcBlock		      "Reference slip_t"
 	      SrcPort		      1
-	      Points		      [52, 0; 0, -65]
-	      DstBlock		      "Subtract"
-	      DstPort		      2
+	      Points		      [52, 0; 0, -65; 13, 0]
+	      Branch {
+		ZOrder			81
+		Points			[0, 75]
+		DstBlock		"Scope"
+		DstPort			2
+	      }
+	      Branch {
+		ZOrder			80
+		DstBlock		"Subtract"
+		DstPort			2
+	      }
 	    }
 	    Line {
 	      ZOrder		      6
 	      SrcBlock		      "Subtract"
 	      SrcPort		      1
-	      Points		      [23, 0]
-	      Branch {
-		ZOrder			69
-		Points			[0, 70]
-		DstBlock		"Scope"
-		DstPort			1
-	      }
-	      Branch {
-		ZOrder			68
-		DstBlock		"PID Controller"
-		DstPort			1
-	      }
+	      DstBlock		      "PID Controller"
+	      DstPort		      1
 	    }
 	    Line {
 	      ZOrder		      65
@@ -5246,8 +5246,18 @@ Model {
 	      ZOrder		      4
 	      SrcBlock		      "slip"
 	      SrcPort		      1
-	      DstBlock		      "Subtract"
-	      DstPort		      1
+	      Points		      [73, 0]
+	      Branch {
+		ZOrder			79
+		Points			[0, 75]
+		DstBlock		"Scope"
+		DstPort			1
+	      }
+	      Branch {
+		ZOrder			78
+		DstBlock		"Subtract"
+		DstPort			1
+	      }
 	    }
 	    Line {
 	      ZOrder		      44
@@ -5347,7 +5357,7 @@ Model {
 	    TiledPaperMargins	    [1.270000, 1.270000, 1.270000, 1.270000]
 	    TiledPageScale	    1
 	    ShowPageBoundaries	    off
-	    ZoomFactor		    "226"
+	    ZoomFactor		    "200"
 	    Block {
 	      BlockType		      Product
 	      Name		      "Divide"
@@ -5728,32 +5738,6 @@ Model {
 	  DstPort		  1
 	}
 	Line {
-	  ZOrder		  51
-	  SrcBlock		  "ABS (PID)"
-	  SrcPort		  1
-	  Points		  [43, 0; 0, -80]
-	  Branch {
-	    ZOrder		    321
-	    DstBlock		    "Scope"
-	    DstPort		    2
-	  }
-	  Branch {
-	    ZOrder		    320
-	    Points		    [0, -75]
-	    Branch {
-	      ZOrder		      332
-	      DstBlock		      "Gain1"
-	      DstPort		      1
-	    }
-	    Branch {
-	      ZOrder		      331
-	      Points		      [0, -115]
-	      DstBlock		      "Add"
-	      DstPort		      1
-	    }
-	  }
-	}
-	Line {
 	  ZOrder		  140
 	  SrcBlock		  "Add"
 	  SrcPort		  1
@@ -5809,8 +5793,8 @@ Model {
 	    Points		    [0, -40]
 	    Branch {
 	      ZOrder		      341
-	      DstBlock		      "Add1"
-	      DstPort		      3
+	      DstBlock		      "Gain1"
+	      DstPort		      1
 	    }
 	    Branch {
 	      ZOrder		      340
@@ -5828,11 +5812,37 @@ Model {
 	  DstPort		  3
 	}
 	Line {
-	  ZOrder		  370
+	  ZOrder		  51
+	  SrcBlock		  "ABS (PID)"
+	  SrcPort		  1
+	  Points		  [43, 0; 0, -80]
+	  Branch {
+	    ZOrder		    321
+	    DstBlock		    "Scope"
+	    DstPort		    2
+	  }
+	  Branch {
+	    ZOrder		    320
+	    Points		    [0, -75]
+	    Branch {
+	      ZOrder		      372
+	      DstBlock		      "Add1"
+	      DstPort		      2
+	    }
+	    Branch {
+	      ZOrder		      331
+	      Points		      [0, -115]
+	      DstBlock		      "Add"
+	      DstPort		      1
+	    }
+	  }
+	}
+	Line {
+	  ZOrder		  371
 	  SrcBlock		  "Gain1"
 	  SrcPort		  1
 	  DstBlock		  "Add1"
-	  DstPort		  2
+	  DstPort		  3
 	}
       }
     }

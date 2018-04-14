@@ -7,7 +7,7 @@ Model {
     NumRootInports	    0
     NumRootOutports	    0
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.75"
+    ComputedModelVersion    "1.76"
     NumModelReferences	    0
     NumTestPointedSignals   1
     TestPointedSignal {
@@ -64,10 +64,10 @@ Model {
 	  $ObjectID		  5
 	  IsActive		  [1]
 	  ViewObjType		  "SimulinkSubsys"
-	  LoadSaveID		  "188"
+	  LoadSaveID		  "367"
 	  Extents		  [1685.0, 833.0]
-	  ZoomFactor		  [1.3881950834757459]
-	  Offset		  [157.03996212121211, 26.976098484848478]
+	  ZoomFactor		  [2.2226899600084193]
+	  Offset		  [152.07632575757577, 49.091553030302919]
 	}
 	Object {
 	  $ObjectID		  6
@@ -91,9 +91,9 @@ Model {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "Dell"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Sat Apr 14 17:25:11 2018"
-  RTWModifiedTimeStamp	  445627509
-  ModelVersionFormat	  "1.%<AutoIncrement:75>"
+  LastModifiedDate	  "Sat Apr 14 17:28:09 2018"
+  RTWModifiedTimeStamp	  445627687
+  ModelVersionFormat	  "1.%<AutoIncrement:76>"
   ConfigurationManager	  "none"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -3307,7 +3307,7 @@ Model {
       System {
 	Name			"Controller"
 	Location		[-7, -7, 1543, 831]
-	Open			on
+	Open			off
 	ModelBrowserVisibility	on
 	ModelBrowserWidth	200
 	ScreenColor		"white"
@@ -4008,7 +4008,7 @@ Model {
 	  System {
 	    Name		    "TCS (PID)"
 	    Location		    [-7, -7, 1543, 831]
-	    Open		    off
+	    Open		    on
 	    ModelBrowserVisibility  on
 	    ModelBrowserWidth	    200
 	    ScreenColor		    "white"
@@ -4071,9 +4071,9 @@ Model {
 	      Form		      "Parallel"
 	      UseFilter		      on
 	      ControllerParametersSource "internal"
-	      P			      "20000"
-	      I			      "200"
-	      D			      "1500"
+	      P			      "P_t"
+	      I			      "I_t"
+	      D			      "D_t"
 	      N			      "100"
 	      InitialConditionSource  "internal"
 	      InitialConditionForIntegrator "0"
